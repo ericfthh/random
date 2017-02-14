@@ -5,15 +5,18 @@ var namespace = "http://www.w3.org/2000/svg"
 // You need to use at least 3 different types of shape.
 // Remember, for the shapes to show up on the canvas, you'll need to CALL the function.
 function createFirstScene() {
-    
-}
+    makeRect(1,1,100000000000000,100000000000000,"blue")
+makeEllipse(125, 75, 33, 10, "grey")
+makeCircle(125, 69, 16, "grey")
+makeRect(103, 83, 40, 40, "yellow")}
 
 
 // Fill in this function so that it draws something using SVG shapes!
 // You need to use at least 3 different types of shape.
 // Remember, for the shapes to show up on the canvas, you'll need to CALL the function.
 function createSecondScene() {
-    
+     makeRect(1,1,100000000000000,100000000000000,"green")
+    makeCircle(50, 50, 25, "cyan")
 }
 
 
@@ -21,30 +24,39 @@ function createSecondScene() {
 // You need to use at least 3 different types of shape.
 // Remember, for the shapes to show up on the canvas, you'll need to CALL the function.
 function createThirdScene() {
-    
+     makeRect(1,1,100000000000000,100000000000000,"purple")
+    makeRect(50, 50, 25,40, "black")
 }
 
 
+function scene() {
+var create = Math.random()
+if (create < 0.33){
+ createFirstScene()
+}else{
+    if (create < 0.67){
+        createSecondScene()
+
+}else{
+    createThirdScene()
+}
+}
 
 
-
-// FILL IN THIS FUNCTION!
-// This function is called whenever you press the "Go!" button.
-function createRandomScene() {
     // Generate a random number between 0 and 1, and store it in a variable.
-    
+
     // If the number is less than 0.33, call the function to create your first scene.
-    
-    
-    
+
+
+
     // Else, if the number is less than 0.67, call the function to create your second scene.
-    
-    
-    
+
+
+
     // Else, call the function to create your third scene.
-    
-    
-    
+
+
+
 }
 
 
@@ -62,7 +74,7 @@ function makeCircle(cx, cy, r, fill, opacity) {
   circle.setAttribute("r", r)
   circle.setAttribute("fill", fill)
   circle.setAttribute("opacity", opacity)
-  
+
   var canvas = document.getElementById("canvas")
   canvas.appendChild(circle)
   return circle
@@ -76,7 +88,7 @@ function makeRect(x, y, width, height, fill, opacity) {
   rect.setAttribute("height", height)
   rect.setAttribute("fill", fill)
   rect.setAttribute("opacity", opacity)
-  
+
   var canvas = document.getElementById("canvas")
   canvas.appendChild(rect)
   return rect
@@ -90,7 +102,7 @@ function makeEllipse(cx, cy, rx, ry, fill, opacity) {
   ellipse.setAttribute("ry", ry)
   ellipse.setAttribute("fill", fill)
   ellipse.setAttribute("opacity", opacity)
-  
+
   var canvas = document.getElementById("canvas")
   canvas.appendChild(ellipse)
   return ellipse
@@ -105,7 +117,7 @@ function makeLine(x1, y1, x2, y2, stroke, strokeWidth, opacity) {
   line.setAttribute("stroke", stroke)
   line.setAttribute("stroke-width", strokeWidth)
   line.setAttribute("opacity", opacity)
-  
+
   var canvas = document.getElementById("canvas")
   canvas.appendChild(line)
   return line
@@ -118,7 +130,7 @@ function makePolyline(points, stroke, strokeWidth, opacity) {
   polyline.setAttribute("stroke-width", strokeWidth)
   polyline.setAttribute("opacity", opacity)
   polyline.setAttribute("fill", "none")
-  
+
   var canvas = document.getElementById("canvas")
   canvas.appendChild(polyline)
   return polyline
@@ -129,7 +141,7 @@ function makePolygon(points, fill, opacity) {
   polygon.setAttribute("points", points)
   polygon.setAttribute("opacity", opacity)
   polygon.setAttribute("fill", fill)
-  
+
   var canvas = document.getElementById("canvas")
   canvas.appendChild(polygon)
   return polygon
@@ -144,7 +156,7 @@ function makeText(message, x, y, fontSize, fontFamily, fill, opacity) {
   text.setAttribute("font-family", fontFamily)
   text.setAttribute("fill", fill)
   text.setAttribute("opacity", opacity)
-  
+
   var canvas = document.getElementById("canvas")
   canvas.appendChild(text)
   return text
@@ -158,7 +170,7 @@ function makeImage(url, x, y, width, height, opacity) {
   image.setAttribute("width", width)
   image.setAttribute("height", height)
   image.setAttribute("opacity", opacity)
-  
+
   var canvas = document.getElementById("canvas")
   canvas.appendChild(image)
   return image
